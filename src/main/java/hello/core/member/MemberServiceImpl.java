@@ -19,4 +19,10 @@ public class MemberServiceImpl implements MemberService{
         return memberRepository.findById(memberId);
     }
     //매개변수로 전달받은 memberId를 memberRepository를 통해 회원조회
+
+
+    //테스트용도
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
+    }
 }
