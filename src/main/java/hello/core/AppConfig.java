@@ -13,7 +13,7 @@ import hello.core.order.OrderServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-//애플리케이션의 설정정보
+//애플리케이션의 설정정보 @Configuration 어노테이션 사용
 @Configuration
 public class AppConfig {
 /*
