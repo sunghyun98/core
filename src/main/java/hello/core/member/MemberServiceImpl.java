@@ -6,6 +6,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class MemberServiceImpl implements MemberService{
     //MemberService 인터페이스를 구현한 구현체
+
+
     private final MemberRepository memberRepository;
 
 
