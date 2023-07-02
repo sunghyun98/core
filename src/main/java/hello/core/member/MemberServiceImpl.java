@@ -34,7 +34,5 @@ public class MemberServiceImpl implements MemberService{
     //테스트용도
     public MemberRepository getMemberRepository() {
         return memberRepository;
-
-
     }
 }
