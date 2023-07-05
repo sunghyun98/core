@@ -22,6 +22,7 @@ public class MemberServiceImpl implements MemberService{
     @Override
     public void join(Member member) {
         memberRepository.save(member);
+
     }
     //매개변수로 전달받은 member 객체를 menberRepository를 통해 저장
     @Override

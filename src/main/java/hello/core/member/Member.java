@@ -9,6 +9,7 @@ public class Member {
     //회원의 등급
 
     public Member(Long id, String name, Grade grade) {
+        
         this.id = id;
         this.name = name;
         this.grade = grade;
