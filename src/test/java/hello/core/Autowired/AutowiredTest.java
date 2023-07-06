@@ -14,6 +14,7 @@ public class AutowiredTest {
     @Test
     void AutowiredOptionTest(){
         ApplicationContext ac = new AnnotationConfigApplicationContext(TestBean.class);
+
     }
 
     static class TestBean{
