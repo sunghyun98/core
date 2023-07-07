@@ -38,4 +38,5 @@ public class OrderServiceTest {
         //회원이 VIP인경우 1000원
     }
 
+
 }
