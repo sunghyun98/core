@@ -10,7 +10,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class OrderServiceImplTest {
-
     @Test
     void creatOrder(){
         MemoryMemberRepository memoryMemberRepository = new MemoryMemberRepository();
