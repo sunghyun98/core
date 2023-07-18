@@ -13,6 +13,5 @@ class Child extends Parent {
         String name = "dsd";
         System.out.println("fdfdfd");
     }
-
 }
 
