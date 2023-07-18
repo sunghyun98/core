@@ -12,6 +12,7 @@ class Child extends Parent {
         int age = 1;
         String name = "dsd";
         System.out.println("fdfdfd");
+
     }
 }
 
