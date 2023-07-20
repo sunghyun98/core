@@ -6,6 +6,5 @@ public class dd {
 
         b.print();
 
-
     }
 }
