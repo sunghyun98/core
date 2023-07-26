@@ -62,7 +62,7 @@ public class AppConfig {
     @Bean
     public OrderService orderService(){
         System.out.println("call AppConfig.orderService");
-        return null;
+        return new OrderServiceImpl(memberRepository(), discountPolicy());
 
     }
 
@@ -74,8 +74,8 @@ public class AppConfig {
 
     @Bean
     public DiscountPolicy discountPolicy() {
-        // return new FixDiscountPolicy();
-        return new RateDiscountPolicy();
+        return new FixDiscountPolicy();
+       // return new RateDiscountPolicy();
     }
 
 }

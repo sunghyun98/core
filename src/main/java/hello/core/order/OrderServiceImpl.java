@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService{
     private final MemberRepository memberRepository;
     //private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
@@ -23,10 +22,11 @@ public class OrderServiceImpl implements OrderService{
 
     //생성자가 하나만 있으면 생략가능하다.
     @Autowired
-//    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy ) {
-//        this.memberRepository = memberRepository;
-//        this.discountPolicy = discountPolicy;
-//    } @RequiredArgsConstructor가 대신 생성해준다
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy fixDiscountPolicy ) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = fixDiscountPolicy;
+    }
+    //@RequiredArgsConstructor가 대신 생성해준다
     @Override
     public Order createOrder(Long memberID, String itemName, int itemPrice) {
         Member member = memberRepository.findById(memberID);
