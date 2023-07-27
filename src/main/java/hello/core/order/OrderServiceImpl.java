@@ -7,6 +7,7 @@ import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -22,9 +23,9 @@ public class OrderServiceImpl implements OrderService{
 
     //생성자가 하나만 있으면 생략가능하다.
     @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy fixDiscountPolicy ) {
+    public OrderServiceImpl(MemberRepository memberRepository, @Qualifier("mainDiscountPolicy") DiscountPolicy discountPolicy ) {
         this.memberRepository = memberRepository;
-        this.discountPolicy = fixDiscountPolicy;
+        this.discountPolicy = discountPolicy;
     }
     //@RequiredArgsConstructor가 대신 생성해준다
     @Override
