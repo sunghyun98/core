@@ -25,6 +25,7 @@ public class AllBeanTest {
         Member member = new Member(1L, "member", Grade.VIP);
         int discountPrice = discountService.discount(member,1000,"fixDiscountPolicy");
 
+
         assertThat(discountService).isInstanceOf(DiscountService.class);
         assertThat(discountPrice).isEqualTo(1000);
 
