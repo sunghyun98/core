@@ -23,10 +23,12 @@ dependencies {
 
 	//PRovider를 사용하기위해 추가해야함
 	implementation 'javax.inject:javax.inject:1'
-
+	//wep라이버리 추가
+	implementation 'org.springframework.boot:spring-boot-starter-web'
 	//lombok 라이브러리 추가 시작
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+
 	testCompileOnly 'org.projectlombok:lombok'
 	testAnnotationProcessor 'org.projectlombok:lombok'
 	//lombok 라이브러리 추가 끝
