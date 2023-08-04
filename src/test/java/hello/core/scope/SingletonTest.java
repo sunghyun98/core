@@ -21,6 +21,7 @@ public class SingletonTest {
         System.out.println("bean2 = " + bean2);
         assertThat(bean1).isSameAs(bean2);
 
+        ac.close();
     }
 
     @Scope("singleton")
