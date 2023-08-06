@@ -1,6 +1,7 @@
 package hello.core.common;
 
 import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -11,7 +12,8 @@ import java.util.UUID;
     로그를 출력하기 위한 "MyLogger" 클래스이다.
  */
 @Component
-@Scope(value = "request")
+@Scope(value = "request", proxyMode = ScopedProxyMode.TARGET_CLASS)
+//프록시 생성
 public class MyLogger {
 
     private String uuid;
@@ -21,9 +23,9 @@ public class MyLogger {
     public void setRequestURL(String requestURL) {
         this.requestURL = requestURL;
     }
-
-    public void log(String message){
-        System.out.println("[" + uuid + "]" + "[" + requestURL + "] " + message);
+    public void log(String message) {
+        System.out.println("[" + uuid + "]" + "[" + requestURL + "] " +
+                message);
     }
 
     @PostConstruct
