@@ -15,7 +15,6 @@ import java.util.UUID;
 @Scope(value = "request", proxyMode = ScopedProxyMode.TARGET_CLASS)
 //프록시 생성
 public class MyLogger {
-
     private String uuid;
     private String requestURL;
 
