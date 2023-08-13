@@ -25,6 +25,7 @@ public class MyLogger {
                 message);
     }
 
+
     @PostConstruct
     public void init(){
         uuid = UUID.randomUUID().toString();
