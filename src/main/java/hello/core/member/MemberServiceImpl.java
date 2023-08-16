@@ -16,6 +16,7 @@ public class MemberServiceImpl implements MemberService{
     @Autowired
     public MemberServiceImpl(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
+
     }
 
     //MemoryMemberRepository 클래스의 인스턴스를 생성하여 할당
