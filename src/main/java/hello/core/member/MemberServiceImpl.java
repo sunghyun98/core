@@ -8,7 +8,6 @@ public class MemberServiceImpl implements MemberService{
     //MemberService 인터페이스를 구현한 구현체
 
     private final MemberRepository memberRepository;
-
     //의존관계를 자동으로 해준다
     //ex) ac.getBean(MemberRepository.class)
     @Autowired
