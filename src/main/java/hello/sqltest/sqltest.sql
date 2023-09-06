@@ -109,4 +109,8 @@ INTO ORHER_TABLE_NAME VALUES('3','',23123,'이름6','32131')
 --SELECT 무조건 있어야 함
 SELECT * FROM DUAL;
 
-----
+
+--function --길이 함수 단일행 함수
+select player_name, length(player_name) as 이름길이
+from player
+where row_id < 10;
