@@ -114,3 +114,74 @@ SELECT * FROM DUAL;
 select player_name, length(player_name) as 이름길이
 from player
 where row_id < 10;
+
+create table SALGRADE(
+                         GRADE NUMBER(2) PRIMARY KEY,
+                         LOSAL NUMBER(5),
+                         HISAL NUMBER(5));
+
+--NVL을 사용한 NULL값 제거
+SELECT ENAME, SAL * 12 + NVL(COMM,0) AS 연봉
+FROM EMP
+WHERE EMPNO = 7369
+;
+
+UPDATE PLAYER
+SET HEIGHT = HEIGHT + 10
+WHERE HEIGHT > 180;
+
+SELECT *
+FROM EMP;
+
+SELECT ENAME, DNAME
+FROM EMP, DEPT
+WHERE EMP.DEPTNO = DEPT.DEPTNO;
+
+--중복 컬럼 테이블명 추가
+SELECT ENAME, DNAME,EMP.DEPTNO
+FROM EMP, DEPT
+WHERE EMP.DEPTNO = DEPT.DEPTNO;
+
+--테이블명이 길때
+SELECT ENAME, B.DNAME, A.DEPTNO
+FROM EMP A, DEPT B
+WHERE A.DEPTNO = B.DEPTNO;
+
+desc selgrade;
+
+--NON EQUI 조인
+SELECT ENAME AS 사원명, SAL AS 급여, GRADE AS 급여등급
+FROM EMP E, SELGRADE S
+WHERE E.SAL BETWEEN S.LOSAL AND S.HISAL;
+
+SELECT E.ENAME, E.DEPTNO, D.DNAME
+FROM EMP E FULL OUTER JOIN DEPT D
+                           ON E.DEPTNO = D.DEPTNO;
+
+SELECT E.ENAME, E.DEPTNO, D.DNAME
+FROM EMP E LEFT OUTER JOIN DEPT D
+                           ON E.DEPTNO = D.DEPTNO
+UNION ALL
+SELECT E.ENAME, E.DEPTNO, D.DNAME
+FROM EMP E RIGHT OUTER JOIN DEPT D
+                            ON E.DEPTNO = D.DEPTNO;
+
+--SELF JOIN
+select e.empno, e.ename, m.empno, m.ename
+from emp e left join emp m
+                     on e.empno = m.mgr;
+
+select empno, mgr
+from emp;
+
+--순방향 질의
+select level, connect_by_root empno,
+       empno as 사원, mgr 관리자,CONNECT_BY_ISLEAF as isleaf
+from emp
+         start with mgr is null
+connect by prior empno = mgr;
+
+select level, empno as 사원, mgr 관리자, CONNECT_BY_ISLEAF as isleaf
+from emp
+         start with empno = '7876'
+connect by prior mrg = empno;
