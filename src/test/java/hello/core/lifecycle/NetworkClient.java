@@ -15,7 +15,7 @@ public class NetworkClient {
     public void setUrl(String url){
         this.url = url;
     }
-    //
+    //dd
     //서비스 시작시 호출
     public void connect(){
         System.out.println("connect = "+ url);
