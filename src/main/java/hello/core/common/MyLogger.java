@@ -16,7 +16,6 @@ import java.util.UUID;
 //프록시 생성
 public class MyLogger {
     private String uuid;
-
     private String requestURL;
     public void setRequestURL(String requestURL) {
         this.requestURL = requestURL;
