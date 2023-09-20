@@ -656,5 +656,6 @@ select player_name, height, position,
 from player;
 
 
+
 select *
 from player;
