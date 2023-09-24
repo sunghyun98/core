@@ -647,6 +647,7 @@ HAVING MAX(HEIGHT) >= 190
 select player_name, height,orgno, rownum
 from (select player_name, height, rownum as orgno from player order by height)
 where rownum < 4
+
 ;
 select player_name, height, rownum from player order by height;
 
