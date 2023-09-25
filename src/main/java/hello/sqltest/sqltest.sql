@@ -656,6 +656,5 @@ select player_name, height, position,
         rank() over (partition by position order by COALESCE(height, 0) desc) as a
 from player;
 
-
 select *
 from player;
