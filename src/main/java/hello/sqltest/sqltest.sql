@@ -651,6 +651,7 @@ where rownum < 4
 ;
 select player_name, height, rownum from player order by height;
 
+
 select player_name, height, position,
        rank() over (order by COALESCE(height, 0) desc) as 몸무게순위,
         rank() over (partition by position order by COALESCE(height, 0) desc) as a
