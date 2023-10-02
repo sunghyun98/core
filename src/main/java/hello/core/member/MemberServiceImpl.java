@@ -10,7 +10,7 @@ public class MemberServiceImpl implements MemberService{
     //의존관계를 자동으로 해준다
     //ex) ac.getBean(MemberRepository.class)
     @Autowired
-    public MemberServiceImpl(MemberRepository memberRepository) {
+    public MemberServiceImpl(MemberRepository memberRepository)  {
         this.memberRepository = memberRepository;
     }
 
