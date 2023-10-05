@@ -26,7 +26,7 @@ public  class  Test  {
         b[1][0] = "3";
         b[1][1] = "4";
         System.out.println(a[0][0] == b[0][0]);
-        if (int i = 0; i
+
         String str2 = "Programming"; // 큰 따옴표로 문자열을 묶습니다.
         String str3 = new String("Programming");
         System.out.println(str2 == str3); // false
